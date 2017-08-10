@@ -33,6 +33,7 @@
             this.btnBegin = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.chkBoxlToI = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -55,7 +56,7 @@
             // btnBegin
             // 
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBegin.Location = new System.Drawing.Point(93, 38);
+            this.btnBegin.Location = new System.Drawing.Point(93, 61);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(143, 37);
             this.btnBegin.TabIndex = 2;
@@ -65,9 +66,9 @@
             // 
             // lblStatus
             // 
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(160)))), ((int)(((byte)(240)))));
-            this.lblStatus.Location = new System.Drawing.Point(12, 81);
+            this.lblStatus.Location = new System.Drawing.Point(12, 107);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(304, 23);
             this.lblStatus.TabIndex = 3;
@@ -77,12 +78,25 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // chkBoxlToI
+            // 
+            this.chkBoxlToI.AutoSize = true;
+            this.chkBoxlToI.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkBoxlToI.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.chkBoxlToI.Location = new System.Drawing.Point(93, 38);
+            this.chkBoxlToI.Name = "chkBoxlToI";
+            this.chkBoxlToI.Size = new System.Drawing.Size(95, 19);
+            this.chkBoxlToI.TabIndex = 4;
+            this.chkBoxlToI.Text = "l -> I Replace";
+            this.chkBoxlToI.UseVisualStyleBackColor = true;
+            // 
             // frmSequentialSRT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(328, 113);
+            this.ClientSize = new System.Drawing.Size(328, 139);
+            this.Controls.Add(this.chkBoxlToI);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.TBOpen);
@@ -102,6 +116,7 @@
         private System.Windows.Forms.Button btnBegin;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.CheckBox chkBoxlToI;
     }
 }
 

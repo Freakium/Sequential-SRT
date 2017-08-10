@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace SequentialSRT
 {
@@ -35,10 +36,10 @@ namespace SequentialSRT
         {
             lblStatus.Text = "Working...";
 
-            lblStatus.Text = numberAssigner(TBOpen.Text);
+            lblStatus.Text = numberAssigner(TBOpen.Text, chkBoxlToI.Checked);
         }
 
-        private string numberAssigner(string filename)
+        private string numberAssigner(string filename, bool lReplace)
         {
             string readIn;
             int number;
@@ -68,18 +69,36 @@ namespace SequentialSRT
                             writer.WriteLine();
                         }
                         else
-                            writer.WriteLine(readIn);
+                        {
+                            if (lReplace)
+                                writer.WriteLine(lToIReplace(readIn));
+                            else
+                                writer.WriteLine(readIn);
+                        }
                     }
 
                     writer.Close();
                 }
 
-                return "SRT Numeration Complete";
+                if( lReplace )
+                    return "SRT Numeration / l -> I Replace Complete";
+                else
+                    return "SRT Numeration Complete";
             }
             catch (Exception)
             {
                 return "File Does Not Exist";
             }
+        }
+
+        private string lToIReplace(string input)
+        {
+            string pattern = "\\bl\\b";
+            string replacement = "I";
+
+            Regex rgx = new Regex(pattern);
+
+            return rgx.Replace(input, replacement);
         }
     }
 }
